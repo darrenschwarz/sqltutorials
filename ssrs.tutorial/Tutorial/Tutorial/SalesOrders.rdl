@@ -16,6 +16,11 @@
     <DataSet Name="AdventureWorksDataset">
       <Query>
         <DataSourceName>AdventureWorks2012</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@OrderNumber">
+            <Value>=Parameters!OrderNumber.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
         <CommandText>SELECT        soh.OrderDate AS Date, soh.SalesOrderNumber AS [Order], pps.Name AS Subcat, pp.Name AS Product, SUM(sd.OrderQty) AS Qty, SUM(sd.LineTotal) AS LineTotal
 FROM            Sales.SalesPerson AS sp INNER JOIN
                          Sales.SalesOrderHeader AS soh ON sp.BusinessEntityID = soh.SalesPersonID INNER JOIN
@@ -23,6 +28,7 @@ FROM            Sales.SalesPerson AS sp INNER JOIN
                          Production.Product AS pp ON sd.ProductID = pp.ProductID INNER JOIN
                          Production.ProductSubcategory AS pps ON pp.ProductSubcategoryID = pps.ProductSubcategoryID INNER JOIN
                          Production.ProductCategory AS ppc ON ppc.ProductCategoryID = pps.ProductCategoryID
+WHERE (UPPER(SalesOrderNumber) =UPPER(@OrderNumber) or  @OrderNumber IS NULL)
 GROUP BY ppc.Name, soh.OrderDate, soh.SalesOrderNumber, pps.Name, pp.Name, soh.SalesPersonID
 HAVING        (ppc.Name = 'Clothing')</CommandText>
       </Query>
@@ -505,7 +511,6 @@ HAVING        (ppc.Name = 'Clothing')</CommandText>
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
-                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -537,7 +542,6 @@ HAVING        (ppc.Name = 'Clothing')</CommandText>
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
-                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -572,7 +576,6 @@ HAVING        (ppc.Name = 'Clothing')</CommandText>
                             <rd:FormatSymbolCulture>en-GB</rd:FormatSymbolCulture>
                           </Style>
                         </Textbox>
-                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                   </TablixCells>
@@ -828,7 +831,6 @@ HAVING        (ppc.Name = 'Clothing')</CommandText>
                           <PaddingBottom>2pt</PaddingBottom>
                         </Style>
                       </Textbox>
-                      <rd:Selected>true</rd:Selected>
                     </CellContents>
                   </TablixHeader>
                   <TablixMembers>
@@ -863,7 +865,6 @@ HAVING        (ppc.Name = 'Clothing')</CommandText>
                               <PaddingBottom>2pt</PaddingBottom>
                             </Style>
                           </Textbox>
-                          <rd:Selected>true</rd:Selected>
                         </CellContents>
                       </TablixHeader>
                     </TablixMember>
@@ -875,7 +876,7 @@ HAVING        (ppc.Name = 'Clothing')</CommandText>
             <DataSetName>AdventureWorksDataset</DataSetName>
             <Top>0.73766cm</Top>
             <Left>0.73766cm</Left>
-            <Height>3.25521cm</Height>
+            <Height>3.2552cm</Height>
             <Width>15.52097cm</Width>
             <Style>
               <Border>
@@ -900,10 +901,25 @@ HAVING        (ppc.Name = 'Clothing')</CommandText>
       </Page>
     </ReportSection>
   </ReportSections>
+  <ReportParameters>
+    <ReportParameter Name="OrderNumber">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Order Number</Prompt>
+    </ReportParameter>
+  </ReportParameters>
   <ReportParametersLayout>
     <GridLayoutDefinition>
       <NumberOfColumns>4</NumberOfColumns>
       <NumberOfRows>2</NumberOfRows>
+      <CellDefinitions>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>0</RowIndex>
+          <ParameterName>OrderNumber</ParameterName>
+        </CellDefinition>
+      </CellDefinitions>
     </GridLayoutDefinition>
   </ReportParametersLayout>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
