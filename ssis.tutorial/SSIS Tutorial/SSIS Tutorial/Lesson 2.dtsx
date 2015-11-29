@@ -11,27 +11,73 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="Lesson 2"
   DTS:PackageType="5"
-  DTS:VersionBuild="22"
-  DTS:VersionGUID="{3CF8F750-BA96-4D57-95BC-D68FD0D57312}">
+  DTS:VersionBuild="31"
+  DTS:VersionGUID="{60C5C198-3110-475D-86F8-7BAEFAC7697C}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Sample Flat File Source Data]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{8AE5F98F-BB2D-4600-8587-31927B60DE58}"
+      DTS:ObjectName="Sample Flat File Source Data">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[User::varFileName]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="4"
+              DTS:TextQualified="True"
+              DTS:ObjectName="AverageRate"
+              DTS:DTSID="{39C33942-9BC1-4174-A4F3-A97C07FBEC44}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="3"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CurrencyID"
+              DTS:DTSID="{0EC51A27-7F6C-4FA2-91C7-290BBDF4F655}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="133"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CurrencyDate"
+              DTS:DTSID="{376C0047-9AC8-40AD-A4A3-9E9913705866}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="4"
+              DTS:TextQualified="True"
+              DTS:ObjectName="EndOfDayRate"
+              DTS:DTSID="{517A1835-F587-43A2-BE66-D661A2C0E7E4}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{A136D666-9E79-4F2E-AB02-704D8F2BA276}"
+      DTS:DTSID="{473CE2BF-19BC-4F54-993B-81351278CD32}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="varFileName">
-      <DTS:VariableValue
-        DTS:DataType="8"
-        xml:space="preserve"></DTS:VariableValue>
-    </DTS:Variable>
-    <DTS:Variable
-      DTS:CreationName=""
-      DTS:DTSID="{6495E4F9-505F-401C-A8D4-7446358C46B9}"
-      DTS:IncludeInDebugDump="2345"
-      DTS:Namespace="User"
-      DTS:ObjectName="varFileName1">
       <DTS:VariableValue
         DTS:DataType="8"
         xml:space="preserve"></DTS:VariableValue>
@@ -101,8 +147,8 @@
                   <connections>
                     <connection
                       refId="Package\Foreach File in Folder\Extract Sample Currency Data\Extract Sample Currency Data.Connections[FlatFileConnection]"
-                      connectionManagerID="{8AE5F98F-BB2D-4600-8587-31927B60DE58}:external"
-                      connectionManagerRefId="Project.ConnectionManagers[Sample Flat File Source Data]"
+                      connectionManagerID="Package.ConnectionManagers[Sample Flat File Source Data]"
+                      connectionManagerRefId="Package.ConnectionManagers[Sample Flat File Source Data]"
                       name="FlatFileConnection" />
                   </connections>
                   <outputs>
@@ -803,10 +849,10 @@ where [refTable].[FullDateAlternateKey] = ?</property>
       <DTS:ForEachVariableMappings>
         <DTS:ForEachVariableMapping
           DTS:CreationName=""
-          DTS:DTSID="{378F475A-FF2E-4632-A85B-96002D9410EB}"
-          DTS:ObjectName="{378F475A-FF2E-4632-A85B-96002D9410EB}"
+          DTS:DTSID="{1C186407-5A2D-4A8A-82FB-D564F05BFC5E}"
+          DTS:ObjectName="{1C186407-5A2D-4A8A-82FB-D564F05BFC5E}"
           DTS:ValueIndex="0"
-          DTS:VariableName="User::varFileName1" />
+          DTS:VariableName="User::varFileName" />
       </DTS:ForEachVariableMappings>
     </DTS:Executable>
   </DTS:Executables>

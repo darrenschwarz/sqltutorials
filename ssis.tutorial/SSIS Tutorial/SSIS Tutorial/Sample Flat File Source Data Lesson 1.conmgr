@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0"?>
 <DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
-  DTS:ObjectName="Sample Flat File Source Data"
-  DTS:DTSID="{8AE5F98F-BB2D-4600-8587-31927B60DE58}"
+  DTS:ObjectName="Sample Flat File Source Data Lesson 1"
+  DTS:DTSID="{05FA0C79-E683-4995-81D4-E23C55F0B299}"
   DTS:CreationName="FLATFILE">
   <DTS:ObjectData>
     <DTS:ConnectionManager
@@ -12,7 +12,7 @@
       DTS:RowDelimiter=""
       DTS:TextQualifier="_x003C_none_x003E_"
       DTS:CodePage="1252"
-      DTS:ConnectionString="C:\pw\ssis.tutorial\SQL2012.Integration_Services.Create_Simple_ETL_Tutorial.Sample\SampleCurrencyData.txt">
+      DTS:ConnectionString="C:\pw\sqltutorials\ssis.tutorial\SQL2012.Integration_Services.Create_Simple_ETL_Tutorial.Sample\SampleCurrencyData.txt">
       <DTS:FlatFileColumns>
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -20,7 +20,7 @@
           DTS:DataType="4"
           DTS:TextQualified="True"
           DTS:ObjectName="AverageRate"
-          DTS:DTSID="{39C33942-9BC1-4174-A4F3-A97C07FBEC44}"
+          DTS:DTSID="{46F1EC53-5405-470D-A399-A445E631705F}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -29,7 +29,7 @@
           DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="CurrencyID"
-          DTS:DTSID="{0EC51A27-7F6C-4FA2-91C7-290BBDF4F655}"
+          DTS:DTSID="{BE54454D-B2C8-4E50-B811-2BD625EC5195}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -37,7 +37,7 @@
           DTS:DataType="133"
           DTS:TextQualified="True"
           DTS:ObjectName="CurrencyDate"
-          DTS:DTSID="{376C0047-9AC8-40AD-A4A3-9E9913705866}"
+          DTS:DTSID="{94CE9CF2-12EA-4DE8-A869-B113B6C98118}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -45,7 +45,7 @@
           DTS:DataType="4"
           DTS:TextQualified="True"
           DTS:ObjectName="EndOfDayRate"
-          DTS:DTSID="{517A1835-F587-43A2-BE66-D661A2C0E7E4}"
+          DTS:DTSID="{A49C2B5A-6A59-432F-AB52-67A428E9FF05}"
           DTS:CreationName="" />
       </DTS:FlatFileColumns>
     </DTS:ConnectionManager>
