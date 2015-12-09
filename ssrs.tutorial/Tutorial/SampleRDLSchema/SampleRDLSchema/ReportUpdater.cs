@@ -11,8 +11,8 @@ namespace SampleRDLSchema
 {
     class ReportUpdater
     {
-        ReportingService2010 _reportService;
-
+        private ReportingService2010 _reportService;
+        private Report _report;
         static void Main(string[] args)
         {
             ReportUpdater reportUpdater = new ReportUpdater();

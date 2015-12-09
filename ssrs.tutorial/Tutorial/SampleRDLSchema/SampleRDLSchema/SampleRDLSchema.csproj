@@ -44,12 +44,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ReportDefinition.cs">
+      <DependentUpon>ReportDefinition.xsd</DependentUpon>
+    </Compile>
     <Compile Include="ReportUpdater.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReportingService2010.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="ReportDefinition.xsd">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
